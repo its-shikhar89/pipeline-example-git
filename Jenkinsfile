@@ -9,7 +9,9 @@ pipeline {
     }
 
     stage('run') {
-      bat 'java Test'
+      steps {
+        bat 'java Test'
+      }
     }
   }
 }
