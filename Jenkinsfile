@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  tools {
+    maven "maven"
+  }
+
   environment {
     VERSION_NAME="1.34"
   }
@@ -9,7 +13,7 @@ pipeline {
     stage('compile') {
       steps {
         bat 'javac Test.java'
-        bat 'echo ${VERSION_NAME}'
+        bat 'echo %VERSION_NAME%'
       }
     }
 
